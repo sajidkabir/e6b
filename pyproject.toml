@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "e6b"
+version = "0.1.0"
+description = "E6B flight computer in Python: wind triangle, crosswind, time-speed-distance, fuel, unit conversions, and navlogs"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Sajid Kabir Saji" }]
+requires-python = ">=3.10"
+keywords = ["e6b", "flight-computer", "wind-triangle", "aviation", "navigation", "flight-planning", "vfr"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+[project.urls]
+Homepage = "https://github.com/sajidkabir/e6b"
+Repository = "https://github.com/sajidkabir/e6b"
+Issues = "https://github.com/sajidkabir/e6b/issues"
+Changelog = "https://github.com/sajidkabir/e6b/blob/main/CHANGELOG.md"
+
+[project.scripts]
+e6b = "e6b.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/e6b"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
